@@ -5,4 +5,3 @@ dj-static
 pillow
 readtime
 django-environ==0.10.0
-sslcommerz-python
