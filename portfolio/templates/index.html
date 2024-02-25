@@ -1,0 +1,705 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="keywords" content="Brainskybd, Python, Programming Language, Website, Application, IT Farm, Technical Support, Data Science, Analytics, Data, sass, software company">
+		<meta name="description" content="BrainSkyBD - Sky Limit Technology on Brain">
+      	<meta property="og:site_name" content="BrainSkyBD">
+      	<meta property="og:url" content="https://brainskybd.com">
+      	<meta property="og:type" content="website">
+      	<meta property="og:title" content="BrainSkyBD - Sky Limit Technology on Brain">
+		<meta name='og:image' content='images/assets/ogg.png'>
+		<!-- For IE -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- For Resposive Device -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- For Window Tab Color -->
+		<!-- Chrome, Firefox OS and Opera -->
+		<meta name="theme-color" content="#fb510c">
+		<!-- Windows Phone -->
+		<meta name="msapplication-navbutton-color" content="#fb510c">
+		<!-- iOS Safari -->
+		<meta name="apple-mobile-web-app-status-bar-style" content="#fb510c">
+		<title>BrainSkyBD - Sky Limit Technology on Brain</title>
+		<!-- Favicon -->
+		<link rel="icon" type="image/png" sizes="56x56" href="{%static 'images/fav-icon/FAVICON-(PNG).png' %}">
+		<!-- Main style sheet -->
+		<link rel="stylesheet" type="text/css" href="{%static 'css/style.css' %}" media="all">
+		<!-- responsive style sheet -->
+		<link rel="stylesheet" type="text/css" href="{%static 'css/responsive.css' %}" media="all">
+
+		<!-- Fix Internet Explorer ______________________________________-->
+		<!--[if lt IE 9]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+			<script src="{%static 'vendor/html5shiv.js' %}"></script>
+			<script src="{%static 'vendor/respond.js' %}"></script>
+		<![endif]-->	
+	</head>
+
+	<body>
+		<div class="main-page-wrapper">
+			<!-- ===================================================
+				Loading Transition
+			==================================================== -->
+			<section>
+				<div id="preloader">
+					<div id="ctn-preloader" class="ctn-preloader">
+						<div class="animation-preloader">
+							<div class="icon"><img src="{%static 'images/fav-icon/FAVICON-(PNG).png' %}" alt="" class="m-auto d-block" width="100"></div>
+							<div class="txt-loading mt-2">
+								<span data-text-preloader="B" class="letters-loading">
+									B
+								</span>
+								<span data-text-preloader="r" class="letters-loading">
+									r
+								</span>
+								<span data-text-preloader="a" class="letters-loading">
+									a
+								</span>
+								<span data-text-preloader="i" class="letters-loading">
+									i
+								</span>
+								<span data-text-preloader="n" class="letters-loading">
+									n
+								</span>
+                                <span data-text-preloader="S" class="letters-loading">
+									S
+								</span>
+                                <span data-text-preloader="k" class="letters-loading">
+									k
+								</span>
+                                <span data-text-preloader="y" class="letters-loading">
+									y
+								</span>
+								<span data-text-preloader="B" class="letters-loading">
+									B
+								</span>
+								<span data-text-preloader="D" class="letters-loading">
+									D
+								</span>
+							</div>
+						</div>	
+					</div>
+				</div>
+			</section>
+
+
+			<!-- 
+			=============================================
+				Search
+			============================================== 
+			-->
+			<div class="offcanvas offcanvas-top theme-search-form justify-content-center" tabindex="-1" id="offcanvasTop">
+				<button type="button" class="close-btn tran3s" data-bs-dismiss="offcanvas" aria-label="Close"><i class="bi bi-x-lg"></i></button>
+				<div class="form-wrapper">
+					<form action="{% url 'search_product' %}">
+						<input type="text" name="word" placeholder="Search Keyword....">
+					</form>
+				</div> <!-- /.form-wrapper -->
+			</div>
+
+
+			<!-- 
+			=============================================
+				Theme Main Menu
+			============================================== 
+			-->
+			<header class="theme-main-menu sticky-menu theme-menu-one">
+				<div class="inner-content">
+					<div class="d-flex align-items-center justify-content-between">
+						<div class="logo order-lg-0"><a href="{% url 'index' %}" class="d-block"><img src="{% static 'images/logo/brainsky_logo-crops.PNG' %}" alt="" width="240"></a></div>
+
+						<div class="right-widget d-flex align-items-center ms-auto ms-lg-0 order-lg-3">
+							<button class="menu-search-btn tran3s" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"><i class="bi bi-search"></i></button>
+							<a href="{% url 'demo_request' %}" class="req-demo-btn tran3s d-none d-lg-block">Request a Demo</a>
+						</div> <!-- /.right-widget -->
+
+						<nav class="navbar navbar-expand-lg order-lg-2">
+							<button class="navbar-toggler d-block d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+						    	<span></span>
+						 	</button>
+						    <div class="collapse navbar-collapse" id="navbarNav">
+						    	<ul class="navbar-nav">
+						    		<li class="d-block d-lg-none"><div class="logo"><a href="{% url 'index' %}"><img src="{% static 'images/logo/brainsky_logo-crops.PNG' %}" alt="" width="130"></a></div></li>
+							        <!-- <li class="nav-item active dropdown">
+							        	<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Home</a>
+							        	<ul class="dropdown-menu">
+							                <li><a href="{% url 'index' %}" class="dropdown-item"><span>User Analysis</span></a></li>
+							                <li><a href="index-2.html" class="dropdown-item"><span>Artificial Intelligence</span></a></li>
+							                <li><a href="index-3.html" class="dropdown-item"><span>Data Science</span></a></li>
+							                <li><a href="index-4.html" class="dropdown-item"><span>Chatboot</span></a></li>
+							                <li><a href="index-5.html" class="dropdown-item"><span>Machine Learning</span></a></li>
+						                </ul>
+						            </li> -->
+									<li class="nav-item">
+										<a class="nav-link" href="#brainskybd-services">Services</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="#brainskybd-products">Products</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="#brainskybd-portfolio">Portfolio</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="#brainskybd-contact">Contact</a>
+									</li>
+						    	</ul>
+						    	<!-- Mobile Content -->
+						    	<div class="mobile-content d-block d-lg-none">
+						    		<div class="d-flex flex-column align-items-center justify-content-center mt-70">
+						    			<a href="{% url 'demo_request' %}" class="req-demo-btn tran3s">Request a Demo</a>
+						    		</div>
+						    	</div> <!-- /.mobile-content -->
+						    </div>
+						</nav>
+					</div>
+				</div> <!-- /.inner-content -->
+			</header> <!-- /.theme-main-menu -->
+
+
+			
+			<!-- 
+			=============================================
+				Theme Hero Banner
+			============================================== 
+			-->
+			<div class="hero-banner-one">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-6 col-md-7">
+							<a href="#brainskybd-services" class="slogan"><strong>We Offer</strong> Different Types of Services <i class="fas fa-chevron-right"></i></a>
+							<h1 class="hero-heading">Embrace the Next Phase of Online Evolution</h1>
+							<p class="text-lg mb-60 lg-mb-40">We develop mobile & web software applications</p>
+							<ul class="style-none button-group d-lg-flex align-items-center">
+								<li class="me-4"><a href="#brainskybd-products" class="btn-one ripple-btn">View Products</a></li>
+								<li class="help-btn">Need any help? <a href="#brainskybd-contact">Contact us</a></li>
+							</ul>
+						</div>
+					</div>
+				</div> <!-- /.container -->
+				<div class="illustration-holder">
+					<img src="{% static 'images/assets/ils_01.webp' %}" alt="" class="main-illustration ms-auto">
+					<img src="{% static 'images/assets/bg_01.webp' %}" alt="" class="shapes bg-shape">
+					<img src="{% static 'images/assets/ils_01_1.webp' %}" alt="" class="shapes shape-one">
+					<img src="{% static 'images/assets/ils_01_2.webp' %}" alt="" class="shapes shape-two">
+					<img src="{% static 'images/assets/ils_01_3.webp' %}" alt="" class="shapes shape-three">
+					<img src="{% static 'images/assets/ils_01_4.webp' %}" alt="" class="shapes shape-four">
+					<img src="{% static 'images/assets/ils_01_5.webp' %}" alt="" class="shapes shape-five">
+					<img src="{% static 'images/assets/ils_01_6.webp' %}" alt="" class="shapes shape-six">
+					<img src="{% static 'images/assets/ils_01_7.webp' %}" alt="" class="shapes shape-seven">
+					<div class="card-one shapes">
+						<div class="icon"><i class="bi bi-check-lg"></i></div>
+						<h6>Automate Your <br>Business.</h6>
+						<span class="info">get work done faster</span>
+					</div> <!-- /.card-one -->
+					<div class="card-two shapes">
+						<div class="icon"><i class="bi bi-check-lg"></i></div>
+						<h6>Brand Your Product</h6>
+					</div> <!-- /.card-two -->
+				</div> <!-- /.illustration-holder -->
+			</div> <!-- /.hero-banner-one -->
+
+			<!-- 
+			=============================================
+				Feature Section One
+			============================================== 
+			-->
+
+			<section id="brainskybd-services" style="padding-top: 1px;">
+			
+			<div class="fancy-feature-one position-relative mt-225 xl-mt-200 lg-mt-150" >
+				<div class="container">
+					<div class="row">
+						<div class="col-xl-4 col-lg-4">
+							<div class="title-style-one">
+								<div class="sc-title">Services</div>
+								<h2 class="main-title">Our Fields Of Expertise</h2>
+							</div> <!-- /.title-style-one -->
+							<p class="sub-heading mt-25 mb-50 md-mb-20">BrainSkyBD Provide Automated Solutions For Your Business.</p>
+							<div class="btn-three">For more details. <a href="#">Click here <i class="fas fa-chevron-right"></i></a></div>
+						</div>
+					</div>
+				</div> <!-- /.container -->
+				<div class="slider-wrapper">
+					<div class="service_slider_one">
+						
+						<div class="item">
+							<div class="block-style-one text-center">
+								<div class="icon d-flex align-items-end justify-content-center mb-50 lg-mb-30"><img src="{% static 'images/icon/icon_03.svg' %}" alt="" class="m-auto"></div>
+								<h5 class="mb-40">AI & Machine Learning</h5>
+								<a href="{% url 'services' %}" class="btn-two">Learn more <i class="fas fa-chevron-right"></i></a>
+							</div> <!-- /.block-style-one -->
+						</div> <!-- /.item -->
+						<div class="item">
+							<div class="block-style-one text-center">
+								<div class="icon d-flex align-items-end justify-content-center mb-50 lg-mb-30"><img src="{% static 'images/icon/icon_04.svg' %}" alt="" class="m-auto"></div>
+								<h5 class="mb-40">App Development</h5>
+								<a href="{% url 'services' %}" class="btn-two">Learn more <i class="fas fa-chevron-right"></i></a>
+							</div> <!-- /.block-style-one -->
+						</div> <!-- /.item -->
+						<div class="item">
+							<div class="block-style-one text-center">
+								<div class="icon d-flex align-items-end justify-content-center mb-50 lg-mb-30"><img src="{% static 'images/icon/icon_07.svg' %}" alt="" class="m-auto"></div>
+								<h5 class="mb-40">Web Development</h5>
+								<a href="{% url 'services' %}" class="btn-two">Learn more <i class="fas fa-chevron-right"></i></a>
+							</div> <!-- /.block-style-one -->
+						</div> <!-- /.item -->
+						<div class="item">
+							<div class="block-style-one text-center">
+								<div class="icon d-flex align-items-end justify-content-center mb-50 lg-mb-30"><img src="{% static 'images/icon/icon_02.svg' %}" alt="" class="m-auto"></div>
+								<h5 class="mb-40">Creative & Marketing</h5>
+								<a href="{% url 'services' %}" class="btn-two">Learn more <i class="fas fa-chevron-right"></i></a>
+							</div> <!-- /.block-style-one -->
+						</div> <!-- /.item -->
+					</div>
+				</div> <!-- /.slider-wrapper -->
+			</div> <!-- /.fancy-feature-one -->
+		
+		</section>
+
+
+		<!--
+			=====================================================
+				Products
+			=====================================================
+			-->
+			<section id="brainskybd-products" style="padding-top: 1px;">
+			<div class="partner-section-one" style="padding: 200px 0 0px!important;">
+				<div class="container">
+					<div style="margin-bottom: 30px;" class="title-style-one text-center" data-aos="fade-up">
+						<div class="sc-title">PRODUCTS</div>
+						<h2 class="main-title md">Our Industry Approved Systems</h2>
+					</div> <!-- /.title-style-one -->
+
+
+				</div>
+				<div class="slider-wrapper">
+					<div class="service_slider_one">
+						{% for product in all_product %}
+						<div class="item">
+							<div class="block-style-one text-center">
+								<div class="icon d-flex align-items-end justify-content-center mb-50 lg-mb-30"><img src="{{ product.image.url }}" alt="" class="m-auto"></div>
+								<h5 class="mb-40">{{ product.Name }}</h5>
+								<a href="{% url 'product_details' product.slug %}" class="btn-two">View Details <i class="fas fa-chevron-right"></i></a>
+							</div> <!-- /.block-style-one -->
+						</div> <!-- /.item -->
+						{% endfor %}
+
+					</div>
+				</div> <!-- /.slider-wrapper -->
+
+				<div style="display:block; text-align: center; margin-top: 25px; padding: 0px!important;" class="hero-banner-one help-btn">
+					<div  class="style-none button-group align-items-center">
+						<div><a href="{% url 'products' %}" class="btn-one ripple-btn">View All Products</a></div>
+						<div style="margin-top: 15px;" class="help-btn">Can't Find What You Are Looking For? <a  href="{% url 'demo_request' %}">Request For A Demo</a></div>
+					</div>
+				</div>
+				
+
+			</div>
+		</section>
+
+			<!-- 
+			=============================================
+				Feature Section Two
+			============================================== 
+			-->
+			
+			<div class="fancy-feature-two position-relative mt-200 lg-mt-120">
+				<div class="container">
+					<div class="row">
+						<div class="col-xl-5 col-lg-6 col-md-7 ms-auto">
+							<div class="block-style-two" data-aos="fade-left">
+								<div class="title-style-one">
+									<div class="sc-title">Over 20+ Clients</div>
+									<h2 class="main-title">We offer Real-time software Solutions.</h2>
+								</div> <!-- /.title-style-one -->
+								<p class="pt-10 pb-20 lg-pb-10">All our services and softwares follow standard indutry design pattern</p>
+								<ul class="style-none list-item">
+									<li>Various analysis options.</li>
+									<li>Page Load (time, size, number of requests).</li>
+									<li>Big data analysis.</li>
+								</ul>
+								<div class="btn-three mt-45 lg-mt-30">Want to learn more about us? <a href="#">Click here <i class="fas fa-chevron-right"></i></a></div>
+							</div> <!-- /.block-style-two -->
+						</div>
+					</div>
+				</div> <!-- /.container -->
+				<div class="illustration-holder sm-mt-20">
+					<img src="{% static 'images/assets/ils_02.svg' %}" alt="" class="main-illustration w-100">
+					<img src="{% static 'images/assets/ils_02_1.svg' %}" alt="" class="shapes shape-one">
+					<img src="{% static 'images/assets/ils_02_1.svg' %}" alt="" class="shapes shape-two">
+					<img src="{% static 'images/assets/ils_02_1.svg' %}" alt="" class="shapes shape-three">
+					<img src="{% static 'images/assets/ils_02_2.svg' %}" alt="" class="shapes shape-four" data-aos="fade-up" data-aos-anchor=".fancy-feature-two" data-aos-delay="100" data-aos-duration="1500">
+					<img src="{% static 'images/assets/ils_02_2.svg' %}" alt="" class="shapes shape-five" data-aos="fade-down" data-aos-anchor=".fancy-feature-two" data-aos-delay="200" data-aos-duration="1500">
+					<img src="{% static 'images/assets/ils_02_3.svg' %}" alt="" class="shapes shape-six" data-aos="fade-down" data-aos-anchor=".fancy-feature-two" data-aos-delay="100" data-aos-duration="1500">
+					<img src="{% static 'images/assets/ils_02_4.svg' %}" alt="" class="shapes shape-seven" data-aos="fade-up" data-aos-anchor=".fancy-feature-two" data-aos-delay="250" data-aos-duration="1500">
+				</div> <!-- /.illustration-holder -->
+			</div> <!-- /.fancy-feature-two -->
+
+
+
+
+			<!--
+			=====================================================
+				Counter Section One
+			=====================================================
+			-->
+			<div class="counter-section-one mt-150 md-mt-80">
+				<div class="container">
+					<div class="inner-container">
+						<div class="row justify-content-center">
+							<div class="col-md-4 col-sm-6" data-aos="fade-up">
+								<div class="counter-block-one text-center mb-20">
+									<div class="main-count"><span class="counter">10</span>+</div>
+									<p>Years Of Industry <br> Experience</p>
+								</div> <!-- /.counter-block-one -->
+							</div>
+							<div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="100">
+								<div class="counter-block-one text-center mb-20">
+									<div class="main-count"><span class="counter">12</span></div>
+									<p>Dedicated & Hardworking <br>Employees</p>
+								</div> <!-- /.counter-block-one -->
+							</div>
+							<div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="200">
+								<div class="counter-block-one text-center mb-20">
+									<div class="main-count"><span class="counter">15</span>+</div>
+									<p>Hours of Weekly  <br>R&D</p>
+								</div> <!-- /.counter-block-one -->
+							</div>
+						</div>
+					</div> <!-- /.inner-container -->
+				</div>
+			</div> <!-- /.counter-section-one -->
+
+
+
+			<!-- 
+			=============================================
+				Feature Section Three
+			============================================== 
+			-->
+			<div class="fancy-feature-three position-relative">
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="col-lg-5 col-md-6">
+							<div class="block-style-two pe-xxl-5" data-aos="fade-right">
+								<div class="title-style-one">
+									<div class="sc-title">Working Process</div>
+									<h2 class="main-title">Let’s see how we work.</h2>
+								</div> <!-- /.title-style-one -->
+								<p class="pt-20 pb-30 lg-pb-10">We have 4 phases of development which ensures that our solution meets the industry standard.</p>
+								<div class="btn-three">Want to learn more about us? <a href="#">Click here <i class="fas fa-chevron-right"></i></a></div>
+							</div> <!-- /.block-style-two -->
+						</div>
+						<div class="col-xl-6 col-lg-7 col-md-6 ms-auto text-end">
+							<div class="illustration-holder position-relative d-inline-block sm-mt-50">
+								<img src="{% static 'images/assets/ils_03.svg' %}" alt="" class="main-illustration w-100">
+								<img src="{% static 'images/assets/ils_03_1.svg' %}" alt="" class="shapes shape-one">
+								<img src="{% static 'images/assets/ils_03_2.svg' %}" alt="" class="shapes shape-two">
+								<img src="{% static 'images/assets/ils_03_2.svg' %}" alt="" class="shapes shape-three">
+								<img src="{% static 'images/assets/ils_03_4.svg' %}" alt="" class="shapes shape-four">
+								<img src="{% static 'images/assets/ils_03_3.svg' %}" alt="" class="shapes shape-five" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1500">
+								<img src="{% static 'images/assets/ils_03_3.svg' %}" alt="" class="shapes shape-six" data-aos="fade-up" data-aos-delay="150" data-aos-duration="1500">
+							</div> <!-- /.illustration-holder -->
+						</div>
+					</div>
+				</div> <!-- /.container -->
+				<div class="mt-100 lg-mt-70">
+					<div class="container">
+						<div class="row justify-content-center gx-xxl-5">
+							<div class="col-lg-3 col-sm-6 d-flex" data-aos="fade-up">
+								<div class="block-style-three mb-25">
+									<div class="numb">1</div>
+									<h6>Software Architecture</h6>
+									<p>We make a blueprint of your system</p>
+								</div> <!-- /.block-style-three -->
+							</div>
+							<div class="col-lg-3 col-sm-6 d-flex" data-aos="fade-up" data-aos-delay="150">
+								<div class="block-style-three mb-25">
+									<div class="numb">2</div>
+									<h6>Interface Design.</h6>
+									<p>The making of UI/UX Designs</p>
+								</div> <!-- /.block-style-three -->
+							</div>
+							<div class="col-lg-3 col-sm-6 d-flex" data-aos="fade-up" data-aos-delay="300">
+								<div class="block-style-three mb-25">
+									<div class="numb">3</div>
+									<h6>Core Dev</h6>
+									<p>Writing & Programming your system</p>
+								</div> <!-- /.block-style-three -->
+							</div>
+							<div class="col-lg-3 col-sm-6 d-flex" data-aos="fade-up" data-aos-delay="300">
+								<div class="block-style-three mb-25">
+									<div class="numb">4</div>
+									<h6>Q/A & Testing</h6>
+									<p>Qualtity Assurance of your system</p>
+								</div> <!-- /.block-style-three -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div> <!-- /.fancy-feature-three -->
+
+
+			<!--
+			=====================================================
+				Portfolio Gallery One
+			=====================================================
+			-->
+			<section id="brainskybd-portfolio" style="padding-top: 1px;">
+			<div class="portfolio-gallery-one mt-150 lg-mt-110" data-aos="fade-up">
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="col-lg-5 col-md-7 col-sm-8">
+							<div class="title-style-one text-center text-sm-start xs-pb-20">
+								<h2 class="main-title">Some of Our Recent Works.</h2>
+							</div> <!-- /.title-style-one -->
+						</div>
+						<div class="col-xl-6 col-lg-7 col-md-5 col-sm-4 ms-auto d-flex justify-content-center justify-content-sm-end">
+							<ul class="slider-arrows slick-arrow-one d-flex style-none">
+								<li class="prev_p1 slick-arrow ripple-btn" style=""><i class="bi bi-arrow-left"></i></li>
+								<li class="next_p1 slick-arrow ripple-btn" style=""><i class="bi bi-arrow-right"></i></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="slider-wrapper">
+						<div class="portfolio_slider_one">
+							{% for portfolio in all_portfolio %}
+							<div class="item">
+								<div class="portfolio-block-one">
+									<div class="img-meta"><img src="{{ portfolio.image.url }}" alt="" class="w-100"></div>
+									<a href="{% url 'portfolio' %}" class="title tran3s d-flex flex-column justify-content-center align-items-center">
+										<span class="tag">{{ portfolio.title }} </span>
+										<span class="pj-name">{{ portfolio.category.name }}</span>
+
+									</a>
+
+
+									<div class="hover-state tran3s"><a class="fancybox tran3s" data-fancybox="" title="Click for large view" href="{{ portfolio.image.url }}" tabindex="0"><i class="bi bi-plus"></i></a></div>
+								</div> <!-- /.portfolio-block-one -->
+							</div> <!-- /.item -->
+							{% endfor %}
+
+
+						</div>
+					</div> <!-- /.slider-wrapper -->
+				</div>
+			</div> <!-- /.portfolio-gallery-one -->
+		</section>
+
+
+			<!--
+			=====================================================
+				Partner Section One
+			=====================================================
+			-->
+			<div class="partner-section-one">
+				<div class="container">
+					<div class="title-style-one text-center" data-aos="fade-up">
+						<div class="sc-title">CLIENTS</div>
+						<h2 class="main-title md">Join us and become a Pro!</h2>
+					</div> <!-- /.title-style-one -->
+
+					<div class="row">
+						<div class="col-xxl-11 m-auto">
+							<ul class="style-none text-center mt-40 lg-mt-10 row">
+								{% for customer in pro_customer_list %}
+								<li class="partner-logo-block-one d-inline-block col-md" data-aos="fade-up" data-aos-delay="100"><a href="{{ customer.links }}" class="d-flex align-items-center justify-content-center"><img src="{{ customer.image.url }}" alt="" style=""></a></li>
+								{% endfor %}
+
+<!--								<li class="partner-logo-block-one d-inline-block" data-aos="fade-up" data-aos-delay="200"><a href="#" class="d-flex align-items-center justify-content-center"><img src="{% static 'images/logo/Plogo-8.png' %}" alt=""></a></li>-->
+<!--								<li class="partner-logo-block-one d-inline-block" data-aos="fade-up" data-aos-delay="300"><a href="#" class="d-flex align-items-center justify-content-center"><img src="{% static 'images/logo/Plogo-9.png' %}" alt=""></a></li>-->
+<!--								<li class="partner-logo-block-one d-inline-block" data-aos="fade-up" data-aos-delay="400"><a href="#" class="d-flex align-items-center justify-content-center"><img src="{% static 'images/logo/Plogo-10.png' %}" alt=""></a></li>-->
+<!--								<li class="partner-logo-block-one d-inline-block" data-aos="fade-up" data-aos-delay="100"><a href="#" class="d-flex align-items-center justify-content-center"><img src="{% static 'images/logo/Plogo-11.png' %}" alt=""></a></li>-->
+<!--								<li class="partner-logo-block-one d-inline-block" data-aos="fade-up" data-aos-delay="200"><a href="#" class="d-flex align-items-center justify-content-center"><img src="{% static 'images/logo/Plogo-12.png' %}" alt=""></a></li>-->
+<!--								<li class="partner-logo-block-one d-inline-block" data-aos="fade-up" data-aos-delay="300"><a href="#" class="d-flex align-items-center justify-content-center"><img src="{% static 'images/logo/Plogo-13.png' %}" alt=""></a></li>-->
+							</ul>
+						</div>
+					</div>
+				</div> <!-- /.container -->
+			</div> <!-- /.partner-section-one -->
+
+
+
+			<!--
+			=====================================================
+				Blog Section One
+			=====================================================
+			-->
+			<div class="blog-section-one pt-100 pb-140 lg-pt-80 lg-pb-80">
+				<div class="container">
+					<div class="title-style-one text-center mb-50 lg-mb-20" data-aos="fade-up">
+						<div class="sc-title">RECENT NEWS</div>
+						<h2 class="main-title">Inside Story & Blog</h2>
+					</div> <!-- /.title-style-one -->
+
+					<div class="row gx-xxl-5">
+						{% for blog in RECENT_NEWS %}
+						<div class="col-lg-4 col-sm-6 d-flex" data-aos="fade-up">
+							<article class="blog-meta-one tran3s mt-30">
+								<figure class="post-img m0"><a href="{% url 'blog_details' blog.slug %}" class="w-100 d-block"><img src="{{ blog.image.url }}" alt="" class="w-100 tran4s"></a></figure>
+								<div class="post-data">
+									<div class="post-tag">
+										<a href="{% url 'blog_details' blog.slug %}">{{ blog.Category.name }}</a> - {{ blog.Read_Time }} read</div>
+									<a href="{% url 'blog_details' blog.slug %}" class="blog-title"><h5>{{ blog.Title }}</h5></a>
+								</div> <!-- /.post-data -->
+							</article>
+						</div>
+						{% endfor %}
+
+
+					</div>
+				</div>
+			</div> <!-- /.blog-section-one -->
+
+
+
+			<!--
+			=====================================================
+				Address Section One
+			=====================================================
+			-->
+			<section id="brainskybd-contact" style="padding-top: 1px;">
+			<div class="address-section-one pt-130 lg-pt-100">
+				<div class="container">
+					<div class="row">
+						<div class="col-xl-8 col-lg-7 col-md-9 m-auto">
+							<div class="title-style-one text-center mb-50" data-aos="fade-up">
+								<div class="sc-title-two">Contact us</div>
+								<h2 class="main-title">Empower your business with BrainSkyBD</h2>
+							</div> <!-- /.title-style-one -->
+							<div class="text-center" data-aos="fade-up" data-aos-delay="150"><a href="#" class="btn-four ripple-btn">Get Started <i class="fas fa-chevron-right"></i></a></div>
+						</div>
+					</div>
+
+					<div class="inner-content" data-aos="fade-up" data-aos-delay="100">
+						<div class="row g-0">
+							<div class="col-md-6 d-flex">
+								<div class="address-block-one d-flex border-right">
+									<div class="icon"><img src="{% static 'images/icon/icon_06.svg' %}" alt=""></div>
+									<div class="text-meta">
+										<h4 class="title">Our Address</h4>
+										<p>Uttara, Dhaka-1230, Bangladesh</p>
+									</div> <!-- /.text-meta -->
+								</div> <!-- /.address-block-one -->
+							</div>
+							<div class="col-md-6 d-flex">
+								<div class="address-block-one d-flex">
+									<div class="icon"><img src="{% static 'images/icon/icon_07.svg' %}" alt=""></div>
+									<div class="text-meta">
+										<h4 class="title">Contact Info</h4>
+										<p>knock at WhatsApp or give us call at <br><a href="#">0130 507 5233</a></p>
+									</div> <!-- /.text-meta -->
+								</div> <!-- /.address-block-one -->
+							</div>
+						</div>
+					</div>
+				</div>
+				<img src="{% static 'images/assets/bg_05.svg' %}" alt="" class="shapes shape-one">
+				<img src="{% static 'images/shape/shape_01.svg' %}" alt="" class="shapes shape-two">
+				<img src="{% static 'images/shape/shape_02.svg' %}" alt="" class="shapes shape-three">
+				<img src="{% static 'images/shape/shape_02.svg' %}" alt="" class="shapes shape-four">
+				<img src="{% static 'images/shape/shape_03.svg' %}" alt="" class="shapes shape-five">
+			</div> <!-- /.address-section-one -->
+			</section>
+
+
+
+			<!--
+			=====================================================
+				Footer
+			=====================================================
+			-->
+			<div class="footer-style-one theme-basic-footer">
+				<div class="container">
+					<div class="inner-wrapper">
+						<div class="row">
+							<div class="col-lg-3 footer-intro mb-40">
+								<div class="logo"><a href="{% url 'index' %}"><img src="{% static 'images/logo/brainsky_logo-crops.PNG' %}" alt="" width="230"></a></div>
+								<p>Grow Up With Advanced Technology</p>
+								<ul class="d-flex social-icon style-none">
+									<li><a href="https://www.facebook.com/brainskybd" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+									<li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+									<li><a href="https://www.linkedin.com/company/96358373/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+								</ul>
+							</div>
+							<div class="col-lg-2 col-md-3 col-sm-6 mb-30">
+								<h5 class="footer-title">Links</h5>
+								<ul class="footer-nav-link style-none">
+									<li><a href="{% url 'index' %}">Home</a></li>
+									<li><a href="{% url 'products' %}">Products</a></li>
+									<li><a href="{% url 'about_us' %}">About us</a></li>
+									<li><a href="{% url 'services' %}">Services</a></li>
+									<li><a href="{% url 'blogs' %}">Blogs</a></li>
+								</ul>
+							</div>
+							<div class="col-xl-2 col-md-3 col-sm-6 mb-30">
+								<h5 class="footer-title">Services</h5>
+								<ul class="footer-nav-link style-none">
+									<li><a href="{% url 'services' %}"><small>App Development</small></a></li>
+									<li><a href="{% url 'services' %}"><small>Web Development</small></a></li>
+									<li><a href="{% url 'services' %}"><small>Machine Learning & AI</small></a></li>
+									<li><a href="{% url 'services' %}"><small>Creative & Marketing</small></a></li>
+								</ul>
+							</div>
+							<div class="col-xl-5 col-lg-4 col-md-6 mb-30">
+								<div class="newsletter ps-xl-5">
+									<h5 class="footer-title">Subscribe </h5>
+									<p>Join over <span>10,000</span> people getting our emails</p>
+									<form action="{% url 'Newsletter_submit' %}" method="POST">{% csrf_token %}
+										<input type="email" name="email" placeholder="Enter your email">
+										<button type="submit">Subscribe</button>
+									</form>
+									<div class="info">We only send interesting and relevant emails.</div>
+								</div> <!-- /.newsletter -->
+							</div>
+						</div>
+
+						<div class="bottom-footer">
+							<div class="d-lg-flex justify-content-between align-items-center">
+								<ul class="order-lg-1 pb-15 d-flex justify-content-center footer-nav style-none">
+									<li><a href="#">Privacy &amp; Terms.</a></li>
+									<li><a href="#">FAQ</a></li>
+									<li><a href="#">Contact Us</a></li>
+								</ul>
+								<p class="copyright text-center order-lg-0 pb-15">Copyright @2023 BrainSkyBD. All Rights Reserved</p>
+							</div>
+						</div>
+					</div> <!-- /.inner-wrapper -->
+				</div>
+			</div> <!-- /.footer-style-one -->
+
+
+			<button class="scroll-top">
+				<i class="bi bi-arrow-up-short"></i>
+			</button>
+			
+			
+
+
+		<!-- Optional JavaScript _____________________________  -->
+
+    	<!-- jQuery first, then Bootstrap JS -->
+    	<!-- jQuery -->
+		<script src="{% static 'vendor/jquery.min.js' %}"></script>
+		<!-- Bootstrap JS -->
+		<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+		<!-- AOS js -->
+		<script src="{% static 'vendor/aos-next/dist/aos.js' %}"></script>
+		<!-- Slick Slider -->
+		<script src="{% static 'vendor/slick/slick.min.js' %}"></script>
+		<!-- js Counter -->
+		<script src="{% static 'vendor/jquery.counterup.min.js' %}"></script>
+		<script src="{% static 'vendor/jquery.waypoints.min.js' %}"></script>
+		<!-- Fancybox -->
+		<script src="{% static 'vendor/fancybox/dist/jquery.fancybox.min.js' %}"></script>
+
+		<!-- Theme js -->
+		<script src="{% static 'js/theme.js' %}"></script>
+		<script src="{% static 'js/active-link.js' %}"></script>
+		</div> <!-- /.main-page-wrapper -->
+	</body>
+</html>

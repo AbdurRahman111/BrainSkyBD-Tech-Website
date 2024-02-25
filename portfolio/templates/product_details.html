@@ -1,0 +1,162 @@
+{% include 'header.html' %}
+{% load static %}
+
+
+			<!-- 
+			=============================================
+				Theme Inner Banner
+			============================================== 
+			-->
+			<div class="theme-inner-banner">
+				<div class="container">
+					<h2 class="intro-title text-center">{{ getProduct.Name }}</h2>
+					<ul class="page-breadcrumb style-none d-flex justify-content-center">
+						<li><a href="{% url 'index' %}">Home</a></li>
+						<li class="current-page">{{ getProduct.Category.name }}</li>
+					</ul>
+				</div>
+				<img src="{% static  'images/shape/shape_38.svg' %}" alt="" class="shapes shape-one">
+				<img src="{% static  'images/shape/shape_39.svg' %}" alt="" class="shapes shape-two">
+			</div> <!-- /.theme-inner-banner -->
+			
+
+
+
+			<!--
+			=====================================================
+				Portfolio Details One
+			=====================================================
+			-->
+			<div class="pr-details-one mt-120 lg-mt-90 mb-170 lg-mb-100">
+				<div class="container">
+					<div class="wrapper ps-xxl-4 pe-xxl-4 ms-xxl-5 me-xxl-5">
+						<div class="row gx-xxl-5">
+							<div class="col-lg-6">
+								<div class="title-style-five">
+									<div class="upper-title">Redesign, Branding</div>
+									<h2 class="main-title">{{ getProduct.Name }}</h2>
+								</div>
+								<div class="text-wrapper pt-30 md-pt-20">
+									{{ getProduct.Description | safe }}
+
+								</div>
+							</div>
+							<div class="col-lg-6">
+								<div class="portfolio-block-two mt-40 mb-80 lg-mt-20 lg-mb-40">
+									<div class="img-meta">
+										<img src="{{ getProduct.image.url }}" alt="" class="w-100">
+										<div class="hover-state tran3s"><a class="fancybox tran3s" data-fancybox="" title="Click for large view" href="{{ getProduct.image.url }}" tabindex="0"><i class="bi bi-plus"></i></a></div>
+									</div>
+								</div> <!-- /.portfolio-block-two -->
+							</div>
+						</div>
+						
+						<div class="mt-80 pt-80 pb-40 mb-60 lg-mt-50 lg-pt-50 lg-pb-20 lg-mb-40 border-top border-bottom">
+							<div class="row gx-xxl-5">
+								<div class="col-lg-6">
+									<h3 class="sub-title">System Features</h3>
+									<ul class="style-none list-item">
+										<li>Various analysis options with ai.</li>
+										<li>Page Load (time, number of requests) lorem quis.</li>
+										<li>Big data analysis with fast process.R</li>
+										<li>Lorem analysis somthing quis dummy.</li>
+									</ul>
+									
+								</div>
+								<div class="col-xl-5 col-lg-6 ms-auto">
+									<div class="form-style-one">
+										<h3 style="font-size:30px!important;" class="form-title pb-40 lg-pb-20">Request For A Demo</h3>
+										<form action="inc/contact.php" id="contact-form"  data-toggle="validator">
+											<div class="messages"></div>
+											<div class="row controls">
+												<div class="col-12">
+													<div class="input-group-meta form-group mb-30">
+														<label>Name*</label>
+														<input type="text" placeholder="Full Name" name="name" required="required" data-error="Name is required.">
+														<div class="help-block with-errors"></div>
+													</div>
+												</div>
+												
+												<div class="col-12">
+													<div class="input-group-meta form-group mb-30">
+														<label>Email*</label>
+														<input type="email" placeholder="example@example.com" name="email" required="required" data-error="Valid email is required.">
+														<div class="help-block with-errors"></div>
+													</div>
+												</div>
+												<div class="col-12">
+													<div class="input-group-meta form-group mb-30">
+														<label>Company Name*</label>
+														<input type="text" placeholder="Company Name" name="name" required="required" data-error="Name is required.">
+														<div class="help-block with-errors"></div>
+													</div>
+												</div>
+												<div class="col-12">
+													<div class="input-group-meta form-group mb-30">
+														<label>Company Link*</label>
+														<input type="text" placeholder="www.domain.com" name="name" required="required" data-error="Name is required.">
+														<div class="help-block with-errors"></div>
+													</div>
+												</div>
+												<div class="col-12">
+													<div class="input-group-meta form-group mb-30">
+														<textarea placeholder="Your message*" name="message" required="required" data-error="Please,leave us a message."></textarea>
+														<div class="help-block with-errors"></div>
+													</div>
+												</div>
+												<div class="col-12"><button class="btn-eight ripple-btn">Submit Request</button></div>
+											</div>
+										</form>
+									</div> <!-- /.form-style-one -->
+								</div>
+							</div>
+						</div>
+
+						<h3 class="sub-title">Working Process</h3>
+						<div class="row gx-xxl-5">
+							<div class="col-lg-3 col-sm-6">
+								<div class="block-style-sixteen d-flex mt-30 md-mt-20">
+									<div class="numb tran3s">1</div>
+									<div class="text">
+										<h6>Software Architure</h6>
+									<p>We make a blueprint of your system</p>
+									</div>
+								</div> <!-- /.block-style-sixteen -->
+							</div>
+							<div class="col-lg-3 col-sm-6">
+								<div class="block-style-sixteen d-flex mt-30 md-mt-20">
+									<div class="numb tran3s">2</div>
+									<div class="text">
+										<h6>Interface Design.</h6>
+									<p>The making of UI/UX Designs</p>
+									</div>
+								</div> <!-- /.block-style-sixteen -->
+							</div>
+							<div class="col-lg-3 col-sm-6">
+								<div class="block-style-sixteen d-flex mt-30 md-mt-20">
+									<div class="numb tran3s">3</div>
+									<div class="text">
+										<h6>Core Dev</h6>
+									<p>Writing & Programming your system</p>
+									</div>
+								</div> <!-- /.block-style-sixteen -->
+							</div>
+							<div class="col-lg-3 col-sm-6">
+								<div class="block-style-sixteen d-flex mt-30 md-mt-20">
+									<div class="numb tran3s">4</div>
+									<div class="text">
+										<h6>Q/A & Testing</h6>
+									<p>Qualtity Assurance of your system</p>
+									</div>
+								</div> <!-- /.block-style-sixteen -->
+							</div>
+						</div>
+						
+					</div> <!-- /.wrapper -->
+				</div>
+			</div> <!-- /.pr-details-one -->
+
+
+
+
+{% include 'footer.html' %}

@@ -1,0 +1,218 @@
+{% load static %}
+<!-- 
+			=============================================
+				Fancy Short Banner One
+			============================================== 
+			-->
+<!--			<div class="fancy-short-banner-one position-relative bottom-transform">-->
+<!--				<div class="container">-->
+<!--					<div class="bg-wrapper">-->
+<!--						<div class="row align-items-center gx-xxl-5">-->
+<!--							<div class="col-lg-6 text-center text-lg-start">-->
+<!--								<div class="sub-title">Work Inquiry</div>-->
+<!--								<h3 class="pe-xxl-5 md-pb-20">Have Any Queries! Send Us A Message.</h3>-->
+<!--							</div>-->
+<!--							<div class="col-lg-6 text-center text-lg-end">-->
+<!--								<a href="{% url 'contact' %}" class="msg-btn tran3s">Contact Us</a>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--					</div> &lt;!&ndash; /.bg-wrapper &ndash;&gt;-->
+<!--				</div> &lt;!&ndash; /.container &ndash;&gt;-->
+<!--			</div> &lt;!&ndash; /.fancy-short-banner-one &ndash;&gt;-->
+
+		
+
+			<!--
+			=====================================================
+				Footer
+			=====================================================
+			-->
+
+			<div class="footer-style-one theme-basic-footer">
+				<div class="container">
+					<div class="inner-wrapper">
+						<div class="subscribe-area">
+							<div class="row align-items-center">
+								<div class="col-md-6">
+									<div class="title-style-four sm-pb-20">
+										<h4 class="main-title">Join Our <span>Newsletter</span> & Get updated.</h4>
+									</div> <!-- /.title-style-four -->
+								</div>
+								<div class="col-md-6">
+									<div class="subscribe-form">
+										<form action="{% url 'Newsletter_submit' %}" method="POST">{% csrf_token %}
+											<input type="email" name="email" placeholder="Enter your email">
+											<button class="ripple-btn tran3s">Subscribe</button>
+										</form>
+										<p>We only send interesting and relevant emails.</p>
+									</div> <!-- /.subscribe-form -->
+								</div>
+							</div>
+						</div> <!-- /.subscribe-area -->
+						<div class="row">
+							<div class="col-lg-3 footer-intro mb-40">
+								<div class="logo"><a href="{% url 'index' %}"><img src="{% static 'images/logo/brainsky_logo-crops.PNG' %}" alt="" width="230"></a></div>
+								<p>Grow Up With Advanced Technology</p>
+								<ul class="d-flex social-icon style-none">
+									<li><a href="https://www.facebook.com/brainskybd" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+									<li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+									<li><a href="https://www.linkedin.com/company/96358373/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+								</ul>
+							</div>
+							<div class="col-lg-2 col-md-3 col-sm-6 mb-30">
+								<h5 class="footer-title">Links</h5>
+								<ul class="footer-nav-link style-none">
+									<li><a href="{% url 'index' %}">Home</a></li>
+									<li><a href="{% url 'products' %}">Products</a></li>
+									<li><a href="{% url 'about_us' %}">About us</a></li>
+									<li><a href="{% url 'services' %}">Services</a></li>
+									<li><a href="{% url 'blogs' %}">Blogs</a></li>
+								</ul>
+							</div>
+							<div class="col-xl-2 col-md-3 col-sm-6 mb-30">
+								<h5 class="footer-title">Services</h5>
+								<ul class="footer-nav-link style-none">
+									<li><a href="{% url 'services' %}"><small>Mobile App Development</small></a></li>
+									<li><a href="{% url 'services' %}"><small>Web Development</small></a></li>
+									<li><a href="{% url 'services' %}"><small>Machine Learning & AI</small></a></li>
+									<li><a href="{% url 'services' %}"><small>Creative & Marketing</small></a></li>
+								</ul>
+							</div>
+							<div class="col-xl-5 col-lg-4 col-md-6 mb-30">
+								<div class="newsletter ps-xl-5">
+									<h5 class="footer-title">Subscribe </h5>
+									<p>Join over <span>10,000</span> people getting our emails</p>
+									<form action="{% url 'Newsletter_submit' %}" method="POST">{% csrf_token %}
+										<input type="email" name="email" placeholder="Enter your email">
+										<button type="submit">Subscribe</button>
+									</form>
+									<div class="info">We only send interesting and relevant emails.</div>
+								</div> <!-- /.newsletter -->
+							</div>
+						</div>
+
+						<div class="bottom-footer">
+							<div class="d-lg-flex justify-content-between align-items-center">
+								<ul class="order-lg-1 pb-15 d-flex justify-content-center footer-nav style-none">
+									<li><a href="#">Privacy &amp; Terms.</a></li>
+									<li><a href="#">FAQ</a></li>
+									<li><a href="#">Contact Us</a></li>
+								</ul>
+								<p class="copyright text-center order-lg-0 pb-15">Copyright @2023 BrainSkyBD. All Rights Reserved</p>
+							</div>
+						</div>
+					</div> <!-- /.inner-wrapper -->
+				</div>
+			</div> <!-- /.footer-style-one -->
+
+
+
+<!--			<div class="footer-style-four space-fix-one theme-basic-footer">-->
+<!--				<div class="container">-->
+<!--					<div class="inner-wrapper">-->
+<!--						<div class="subscribe-area">-->
+<!--							<div class="row align-items-center">-->
+<!--								<div class="col-md-6">-->
+<!--									<div class="title-style-four sm-pb-20">-->
+<!--										<h4 class="main-title">Join Our <span>Newsletter</span> & Get updated.</h4>-->
+<!--									</div> &lt;!&ndash; /.title-style-four &ndash;&gt;-->
+<!--								</div>-->
+<!--								<div class="col-md-6">-->
+<!--									<div class="subscribe-form">-->
+<!--										<form action="{% url 'Newsletter_submit' %}" method="POST">{% csrf_token %}-->
+<!--											<input type="email" name="email" placeholder="Enter your email">-->
+<!--											<button class="ripple-btn tran3s">Subscribe</button>-->
+<!--										</form>-->
+<!--										<p>We only send interesting and relevant emails.</p>-->
+<!--									</div> &lt;!&ndash; /.subscribe-form &ndash;&gt;-->
+<!--								</div>-->
+<!--							</div>-->
+<!--						</div> &lt;!&ndash; /.subscribe-area &ndash;&gt;-->
+<!--						<div class="row">-->
+<!--							<div class="col-lg-4 footer-intro mb-40">-->
+<!--								<div class="logo"><a href="index.html"><img src="{% static 'images/logo/logo_01.webp' %}" alt="" width="200"></a></div>-->
+<!--								<p>We will assist you in becoming more successful.</p>-->
+<!--								<ul class="d-flex social-icon style-none">-->
+<!--									<li><a href="https://www.facebook.com/profile.php?id=100090730226181"><i class="fab fa-facebook-f"></i></a></li>-->
+<!--									<li><a href="#"><i class="fab fa-twitter"></i></a></li>-->
+<!--									<li><a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a></li>-->
+<!--								</ul>-->
+<!--							</div>-->
+<!--							<div class="col-lg-2 col-sm-4 ms-auto mb-30">-->
+<!--								<h5 class="footer-title">Links</h5>-->
+<!--								<ul class="footer-nav-link style-none">-->
+<!--									<li><a href="{% url 'index' %}">Home</a></li>-->
+<!--									<li><a href="{% url 'products' %}">Products</a></li>-->
+<!--									<li><a href="{% url 'about_us' %}">About us</a></li>-->
+<!--									<li><a href="{% url 'services' %}">Services</a></li>-->
+<!--									<li><a href="{% url 'blogs' %}">Blogs</a></li>-->
+<!--								</ul>-->
+<!--							</div>-->
+<!--							<div class="col-lg-3 col-sm-4 mb-30">-->
+<!--								<h5 class="footer-title">Services</h5>-->
+<!--								<ul class="footer-nav-link style-none">-->
+<!--									<li><a href="service-details-V1.html">Artificial Intelligence</a></li>-->
+<!--									<li><a href="service-details-V1.html">Data Analytics</a></li>-->
+<!--									<li><a href="service-details-V1.html">Data Visualization</a></li>-->
+<!--									<li><a href="service-details-V1.html">Deep Learning</a></li>-->
+<!--									<li><a href="service-details-V1.html">Statistical Modeling</a></li>-->
+<!--								</ul>-->
+<!--							</div>-->
+<!--							<div class="col-xl-2 col-lg-3 col-sm-4 mb-30">-->
+<!--								<h5 class="footer-title">Legal</h5>-->
+<!--								<ul class="footer-nav-link style-none">-->
+<!--									<li><a href="{% url 'Terms_of_use' %}">Terms of use</a></li>-->
+<!--									<li><a href="{% url 'Terms_and_conditions' %}">Terms & conditions</a></li>-->
+<!--									<li><a href="{% url 'Privacy_policy' %}">Privacy policy</a></li>-->
+<!--									<li><a href="{% url 'Cookie_policy' %}">Cookie policy</a></li>-->
+<!--								</ul>-->
+<!--							</div>-->
+<!--						</div>-->
+
+<!--						<div class="bottom-footer">-->
+<!--							<div class="d-lg-flex justify-content-between align-items-center">-->
+<!--								<ul class="order-lg-1 pb-15 d-flex justify-content-center footer-nav style-none">-->
+<!--									<li><a href="faq.html">Privacy &amp; Terms.</a></li>-->
+<!--									<li><a href="faq.html">FAQ</a></li>-->
+<!--									<li><a href="contact-us.html">Contact Us</a></li>-->
+<!--								</ul>-->
+<!--								<p class="copyright text-center order-lg-0 pb-15">Copyright @2023 BrainSkyBD. All Rights Reserved.</p>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--					</div> &lt;!&ndash; /.inner-wrapper &ndash;&gt;-->
+<!--				</div>-->
+<!--			</div> &lt;!&ndash; /.footer-style-four &ndash;&gt;-->
+
+
+			<button class="scroll-top">
+				<i class="bi bi-arrow-up-short"></i>
+			</button>
+			
+			
+
+
+		<!-- Optional JavaScript _____________________________  -->
+
+    	<!-- jQuery first, then Bootstrap JS -->
+    	<!-- jQuery -->
+		<script src="{%static 'vendor/jquery.min.js' %}"></script>
+		<!-- Bootstrap JS -->
+		<script src="{%static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+		<!-- AOS js -->
+		<script src="{%static 'vendor/aos-next/dist/aos.js' %}"></script>
+		<!-- Slick Slider -->
+		<script src="{%static 'vendor/slick/slick.min.js' %}"></script>
+		<!-- js Counter -->
+		<script src="{%static 'vendor/jquery.counterup.min.js' %}"></script>
+		<script src="{%static 'vendor/jquery.waypoints.min.js' %}"></script>
+		<!-- Fancybox -->
+		<script src="{%static 'vendor/fancybox/dist/jquery.fancybox.min.js' %}"></script>
+		<!-- isotop -->
+		<script  src="{%static 'vendor/isotope.pkgd.min.js' %}"></script>
+		<script  src="{%static 'vendor/validator.js' %}"></script>
+
+		<!-- Theme js -->
+		<script src="{%static 'js/theme.js' %}"></script>
+		</div> <!-- /.main-page-wrapper -->
+	</body>
+</html>

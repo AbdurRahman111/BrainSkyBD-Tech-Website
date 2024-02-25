@@ -1,0 +1,73 @@
+{% include 'header.html' %}
+{% load static %}
+
+<div class="theme-inner-banner">
+    <div class="container">
+        <h2 class="intro-title text-center">System Demo Request</h2>
+        <ul class="page-breadcrumb style-none d-flex justify-content-center">
+            <li><a href="index.html">Home</a></li>
+            <li class="current-page">Demo Request</li>
+        </ul>
+    </div>
+    <img src="{% static 'images/shape/shape_38.svg' %}" alt="" class="shapes shape-one">
+    <img src="{% static 'images/shape/shape_39.svg' %}" alt="" class="shapes shape-two">
+</div> <!-- /.theme-inner-banner -->
+
+<div style="width: 85%; margin: auto;" class="form-style-one">
+    <h3 style="font-size:30px; margin-top: 35px;" class="form-title pb-40 lg-pb-20">Fill In The Form Below For Requesting a System's Prototype</h3>
+    <form action="inc/contact.php" id="contact-form"  data-toggle="validator">
+        <div class="messages"></div>
+        <div class="row controls">
+            <div class="col-12">
+                <div class="input-group-meta form-group mb-30">
+                    <label>Name*</label>
+                    <input type="text" placeholder="Full Name" name="name" required="required" data-error="Name is required.">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+            
+            <div class="col-12">
+                <div class="input-group-meta form-group mb-30">
+                    <label>Email*</label>
+                    <input type="email" placeholder="example@example.com" name="email" required="required" data-error="Valid email is required.">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="input-group-meta form-group mb-30">
+                    <label>Company Name*</label>
+                    <input type="text" placeholder="myCompany" name="company-name" required="required" data-error="Valid company name is required.">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="input-group-meta form-group mb-30">
+                    <label>Company Link*</label>
+                    <input type="text" placeholder="www.domain.com" name="company-name" required="required" data-error="Valid company name is required.">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="input-group-meta form-group mb-30">
+                    <label>Demo's Industrial Name*</label>
+                    <input type="text" placeholder="Industrial Title" name="company-name" required="required" data-error="Valid company name is required.">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="input-group-meta form-group mb-30">
+                    <textarea placeholder="Demo Features*" name="message" required="required" data-error="Please,leave us a message."></textarea>
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+            <div style="margin-bottom: 35px;" class="col-12"><button class="btn-eight ripple-btn">Submit Request</button></div>
+        </div>
+    </form>
+</div> <!-- /.form-style-one -->
+
+
+{% include 'footer.html' %}

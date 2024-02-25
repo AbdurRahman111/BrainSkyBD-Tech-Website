@@ -1,0 +1,84 @@
+{% include 'header.html' %}
+{% load static %}
+
+			<!-- 
+			=============================================
+				Theme Main Menu
+			============================================== 
+			-->
+			
+
+
+			
+			<!-- 
+			=============================================
+				Theme Inner Banner
+			============================================== 
+			-->
+			<div class="theme-inner-banner">
+				<div class="container">
+					<h2 class="intro-title text-center">Work Gallery</h2>
+					<ul class="page-breadcrumb style-none d-flex justify-content-center">
+						<li><a href="{% url 'index' %}">Home</a></li>
+						<li class="current-page">Portfolio</li>
+					</ul>
+				</div>
+				<img src="{% static 'images/shape/shape_38.svg' %}" alt="" class="shapes shape-one">
+				<img src="{% static 'images/shape/shape_39.svg' %}" alt="" class="shapes shape-two">
+			</div> <!-- /.theme-inner-banner -->
+			
+
+
+
+			<!-- 
+			=============================================
+				Portfolio Gallery Four
+			============================================== 
+			-->
+			<div class="portfolio-gallery-four mt-140 mb-130 lg-mt-90 lg-mb-50">
+				<div class="container">
+					<ul class="style-none text-center isotop-menu-wrapper g-control-nav-one pb-30 lg-pb-10">
+						<li class="is-checked" data-filter="*">All</li>
+
+						{% if all_Portfolio_Category %}
+						{% for cat_portfolio in all_Portfolio_Category %}
+						<li data-filter=".{{cat_portfolio.name}}">{{cat_portfolio.name}}</li>
+						{% endfor %}
+						{% endif %}
+
+<!--						<li data-filter=".plugin">Plugin</li>-->
+<!--						<li data-filter=".design">Design</li>-->
+<!--						<li data-filter=".mobile">Mobile App</li>-->
+<!--						<li data-filter=".branding">Branding</li>-->
+					</ul>
+
+					<div id="isotop-gallery-wrapper" class="grid-2column custom-container">
+						<div class="grid-sizer"></div>
+						{% for portfolio in all_portfolio %}
+						<div class="isotop-item {{portfolio.category.name}} branding">
+							<div class="portfolio-block-two mt-25">
+								<div class="img-meta img-height" style="height: 231px;">
+									<img src="{{ portfolio.image.url }}" alt="" class="w-100">
+									<div class="hover-state tran3s"><a class="fancybox tran3s" data-fancybox="" title="Click for large view" href="{{ portfolio.image.url }}" tabindex="0"><i class="bi bi-plus"></i></a></div>
+								</div>
+								<li class="title tran3s d-flex flex-column justify-content-center align-items-center">
+									<span class="tag">{{ portfolio.title }}</span>
+									{% if portfolio.links %}
+									<span class="tag"><a href="{{ portfolio.links }}" target="_blank" style="border: 1px solid #ccc;
+    padding: 0px 50px;
+    border-radius: 10px;" >View</a></span>
+									{% endif %}
+									<span class="pj-name">{{ portfolio.category.name }}</span>
+								</li>
+							</div> <!-- /.portfolio-block-two -->
+						</div> <!-- /.item -->
+						{% endfor %}
+
+
+					</div>
+				</div>
+			</div> <!-- /.portfolio-gallery-four -->
+
+
+			{% include 'footer.html' %}
+			
