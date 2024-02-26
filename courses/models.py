@@ -71,9 +71,9 @@ class Course_Table(models.Model):
         super(Course_Table, self).save(*args, **kwargs)
 
 
-class Course_Checkout_Table(models.Model):
+class Course_Enrollments_Table(models.Model):
     class Meta:
-        verbose_name_plural = 'Course Checkout Table'
+        verbose_name_plural = 'Course Enrollments Table'
     Name = models.CharField(max_length=255)
     Email = models.CharField(max_length=255)
     Number = models.CharField(max_length=255)

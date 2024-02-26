@@ -1,31 +1,91 @@
 {% include 'header.html' %}
+
 {% load static %}
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-xxxxxx" crossorigin="anonymous" />
+
 
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '921487979611725');
-fbq('track', 'ViewContent');
+	{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+	n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+	if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+	n.queue=[];t=b.createElement(e);t.async=!0;
+	t.src=v;s=b.getElementsByTagName(e)[0];
+	s.parentNode.insertBefore(t,s)}(window, document,'script',
+	'https://connect.facebook.net/en_US/fbevents.js');
+	fbq('init', '921487979611725');
+	fbq('track', 'ViewContent');
 </script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=921487979611725&ev=ViewContent&noscript=1"
-/></noscript>
+
+<noscript>
+	<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=921487979611725&ev=ViewContent&noscript=1"/>
+</noscript>
+
+<noscript>
+    <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=921487979611725&ev=AddToCart&noscript=1"/>
+</noscript>
+
+<noscript>
+    <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=921487979611725&ev=InitiateCheckout&noscript=1"/>
+</noscript>
 <!-- End Meta Pixel Code -->
 
+<script>
+	function func_TriggerAddToCartEvent(){
+    	return new Promise((resolve, reject) => {
+            // add to cart pixel event start
+            !function(f,b,e,v,n,t,s){
+                // Replace 'YOUR_PIXEL_ID' with your actual Pixel ID
+                if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+                if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+                n.queue=[];t=b.createElement(e);t.async=!0;
+                t.src=v;s=b.getElementsByTagName(e)[0];
+                s.parentNode.insertBefore(t,s)
+            }(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '921487979611725');
+            fbq('track', 'AddToCart');
+            // add to cart pixel event end
+            console.log('clicked add to cart');
+    });
+}
+</script>
 
-			<!-- 
-			=============================================
-				Theme Inner Banner
-			============================================== 
-			-->
+<script>
+	function func_TriggerInitiateCheckoutEvent(){
+    	return new Promise((resolve, reject) => {
+            // add to cart pixel event start
+            !function(f,b,e,v,n,t,s){
+                // Replace 'YOUR_PIXEL_ID' with your actual Pixel ID
+                if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+                if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+                n.queue=[];t=b.createElement(e);t.async=!0;
+                t.src=v;s=b.getElementsByTagName(e)[0];
+                s.parentNode.insertBefore(t,s)
+            }(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '921487979611725');
+            fbq('track', 'InitiateCheckout');
+            // add to cart pixel event end
+            console.log('clicked add to cart');
+    });
+}
+</script>
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-xxxxxx" crossorigin="anonymous" />
+
+
+<!--
+=============================================
+	Theme Inner Banner
+==============================================
+-->
 <!--			<div class="theme-inner-banner">-->
 <!--				<div class="container">-->
 <!--					<h2 class="intro-title text-center">{{ getCourse.Name }}</h2>-->
@@ -73,7 +133,7 @@ src="https://www.facebook.com/tr?id=921487979611725&ev=ViewContent&noscript=1"
 										<span class="inline-block text-2xl font-semibold" style="color:green;"><b>৳{{ getCourse.offer_price }}</b></span>
 										&nbsp;<del class="ml-2 text-base font-normal md:text-xl" style="color:red;"><b>৳{{ getCourse.regular_price }}</b></del>
 									</div>
-									<a href="#checkout_form" class="btn btn-warning" style="width:100%;"><b>কোর্সটি কিনুন</b></a>
+									<a href="#checkout_form" class="btn btn-warning" style="width:100%;" onclick="func_TriggerAddToCartEvent()"><b>কোর্সটি কিনুন</b></a>
 								  </div>
 								</div>
 
@@ -108,14 +168,14 @@ src="https://www.facebook.com/tr?id=921487979611725&ev=ViewContent&noscript=1"
 									/* Media query for screens with a maximum width of 767px (typical for mobile devices) */
 									@media (max-width: 767px) {
 										#checkout_form {
-											margin-bottom: 125px;
+											margin-bottom: 130px;
 										}
 									}
 
 									/* Media query for screens with a minimum width of 768px (typical for desktop devices) */
 									@media (min-width: 768px) {
 										#checkout_form {
-											margin-bottom: 175px;
+											margin-bottom: 170px;
 										}
 									}
 								</style>
@@ -141,7 +201,7 @@ src="https://www.facebook.com/tr?id=921487979611725&ev=ViewContent&noscript=1"
 										<label for="">ফোন নম্বর <span style="color:red;">*</span></label>
 										<input name="Phone_Number" type="text" class="form-control" id="" required>
 									  </div>
-									  <button type="submit" class="btn btn-warning mt-2" style="width:30%;"><b>এগিয়ে যান</b></button>
+									  <button type="submit" class="btn btn-warning mt-2" style="width:30%;" onclick="func_TriggerInitiateCheckoutEvent()"><b>এগিয়ে যান</b></button>
 									</form>
 								</div>
 
