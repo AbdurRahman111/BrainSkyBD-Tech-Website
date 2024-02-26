@@ -100,7 +100,27 @@ src="https://www.facebook.com/tr?id=921487979611725&ev=ViewContent&noscript=1"
 								<div class="text-wrapper pt-30 md-pt-20">
 									{{ getCourse.Description | safe }}
 								</div>
-								<div id="checkout_form" style="margin-bottom: 30px ">
+								 <style>
+									/* Default style for both mobile and desktop */
+									#checkout_form {
+									}
+
+									/* Media query for screens with a maximum width of 767px (typical for mobile devices) */
+									@media (max-width: 767px) {
+										#checkout_form {
+											margin-bottom: 125px;
+										}
+									}
+
+									/* Media query for screens with a minimum width of 768px (typical for desktop devices) */
+									@media (min-width: 768px) {
+										#checkout_form {
+											margin-bottom: 175px;
+										}
+									}
+								</style>
+								<div id="checkout_form" style=""></div>
+								<div id="text_show" style="margin-bottom: 30px ">
 									এই কোর্সটি  পেতে নিচের ফরমটি পূরণ করুন।
 								</div>
 								<hr style="">
