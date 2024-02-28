@@ -41,6 +41,12 @@ class Course_Table(models.Model):
     course_view_select = models.CharField(max_length=255, choices=view_option, default='image', blank=True, null=True)
     Short_Description = RichTextField(blank=True, null=True)
     Description = RichTextField(blank=True, null=True)
+    course_type_option = (
+        ('Live', 'Live'),
+        ('Recorded', 'Recorded'),
+    )
+    course_type = models.CharField(max_length=255, choices=course_type_option, default='Live', blank=True, null=True)
+    payment_url = models.URLField(max_length=255, default=None, blank=True, null=True)
     course_file = models.FileField(upload_to="course_file/", blank=True, null=True)
     tags = models.CharField(max_length=255, default="", blank=True, null=True)
     featured = models.BooleanField(default=False)

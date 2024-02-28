@@ -29,6 +29,10 @@ def checkout_form_submit(request):
         messages.success(request, "কিছুক্ষন এর মধ্যে আপনার সাথে আমাদের একজন এজেন্ট যোগাযোগ করবেন। \n জরুরি প্রয়োজনে কল করুন ০১৮২২২২৪০৮০ ")
         # return redirect('course_details', getCourse.slug)
         # return render(request, "courses/couse_buy_success_page.html")
-        return redirect('https://shop.bkash.com/brainskybd01999147566/pay/bdt1/JYcB8W')
+        # return redirect('https://shop.bkash.com/brainskybd01999147566/pay/bdt1/JYcB8W')
+        if getCourse.payment_url:
+            return redirect(getCourse.payment_url)
+        else:
+            return render(request, "courses/couse_buy_success_page.html")
     else:
         return redirect('course_page')
