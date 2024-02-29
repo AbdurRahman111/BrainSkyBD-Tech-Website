@@ -26,6 +26,7 @@ class Course_Table(models.Model):
     Class_Qty = models.CharField(max_length=255, default=None, blank=True, null=True)
     Duration = models.CharField(max_length=255, default=None, blank=True, null=True)
     Task = models.CharField(max_length=255, default=None, blank=True, null=True)
+    Class_Start_Date = models.CharField(max_length=255, default=None, blank=True, null=True)
     slug = models.SlugField(default="Auto-Generate", editable=False)
     regular_price = models.IntegerField()
     offer_price = models.IntegerField()

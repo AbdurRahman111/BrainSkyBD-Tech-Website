@@ -126,9 +126,11 @@
 								  <div class="card-body">
 									<h5 class="card-title">{{ getCourse.Name }}</h5>
 									<p class="card-text">
-										<b><i class="fas fa-chalkboard-teacher"></i> {{ getCourse.Class_Qty }}</b><br>
-										<b><i class="far fa-clock"></i> &nbsp;{{ getCourse.Duration }}</b><br>
-										<b><i class="fas fa-file-alt"></i> &nbsp;&nbsp;{{ getCourse.Task }}</b></p>
+										{% if getCourse.Class_Qty %}<b><i class="fas fa-chalkboard-teacher"></i> {{ getCourse.Class_Qty }}</b><br>{% endif %}
+										{% if getCourse.Duration %}<b><i class="far fa-clock"></i> &nbsp;{{ getCourse.Duration }}</b><br>{% endif %}
+										{% if getCourse.Task %}<b><i class="fas fa-file-alt"></i> &nbsp;&nbsp;{{ getCourse.Task }}</b><br>{% endif %}
+										{% if getCourse.Class_Start_Date %}<b><i class="fas fa-calendar-alt"></i> &nbsp;&nbsp;{{ getCourse.Class_Start_Date }}</b>{% endif %}
+									</p>
 									<div class="md:mb-3">
 										<span class="inline-block text-2xl font-semibold" style="color:green;"><b>৳{{ getCourse.offer_price }}</b></span>
 										&nbsp;<del class="ml-2 text-base font-normal md:text-xl" style="color:red;"><b>৳{{ getCourse.regular_price }}</b></del>
