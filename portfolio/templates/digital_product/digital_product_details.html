@@ -190,7 +190,7 @@
 								<div style="">
 									<h3>ফর্ম পূরণ করুন </h3>
 									<form action="{% url 'digital_product_checkout_form_submit' %}" method="POST">{% csrf_token %}
-									  <input type="hidden" name="course_id" value="{{ getdigital_product.id }}">
+									  <input type="hidden" name="digital_product_id" value="{{ getdigital_product.id }}">
 									  <div class="form-group">
 										<label for="exampleInputEmail1">নাম <span style="color:red;">*</span></label>
 										<input type="text" name="Customer_Name" class="form-control" id="" aria-describedby="emailHelp" required>
