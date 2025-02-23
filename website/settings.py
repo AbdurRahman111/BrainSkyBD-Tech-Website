@@ -268,3 +268,10 @@ JAZZMIN_SETTINGS = {
 #SSLCOMMERZ configuration
 STORE_ID = env("STORE_ID")   #STORE_ID
 STORE_PASS = env("STORE_PASS") #STORE_PASS
+
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://brainskybd.com",
+    "https://www.brainskybd.com",
+    "http://18.138.48.210",  # If accessing via IP
+]
