@@ -24,7 +24,7 @@ def digital_product_checkout_form_submit(request):
 
         getdigital_product = Digital_Product_Table.objects.get(id=digital_product_id)
 
-        var_digital_product_Checkout_Table = Digital_Product_Purchase_Table(Name=Customer_Name, Email=Customer_Email, Number=Phone_Number, digital_product=getdigital_product)
+        var_digital_product_Checkout_Table = Digital_Product_Purchase_Table(Name=Customer_Name, Email=Customer_Email, Number=Phone_Number, Digital_Product=getdigital_product)
         var_digital_product_Checkout_Table.save()
         messages.success(request, "কিছুক্ষন এর মধ্যে আপনার সাথে আমাদের একজন এজেন্ট যোগাযোগ করবেন। \n জরুরি প্রয়োজনে কল করুন ০১৮২২২২৪০৮০ ")
         # return redirect('digital_product_details', getdigital_product.slug)
