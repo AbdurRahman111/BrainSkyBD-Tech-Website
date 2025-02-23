@@ -1,0 +1,325 @@
+{% include 'header.html' %}
+
+{% load static %}
+
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+	{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+	n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+	if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+	n.queue=[];t=b.createElement(e);t.async=!0;
+	t.src=v;s=b.getElementsByTagName(e)[0];
+	s.parentNode.insertBefore(t,s)}(window, document,'script',
+	'https://connect.facebook.net/en_US/fbevents.js');
+	fbq('init', '921487979611725');
+	fbq('track', 'ViewContent');
+</script>
+
+<noscript>
+	<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=921487979611725&ev=ViewContent&noscript=1"/>
+</noscript>
+
+<noscript>
+    <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=921487979611725&ev=AddToCart&noscript=1"/>
+</noscript>
+
+<noscript>
+    <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=921487979611725&ev=InitiateCheckout&noscript=1"/>
+</noscript>
+<!-- End Meta Pixel Code -->
+
+<script>
+	function func_TriggerAddToCartEvent(){
+    	return new Promise((resolve, reject) => {
+            // add to cart pixel event start
+            !function(f,b,e,v,n,t,s){
+                // Replace 'YOUR_PIXEL_ID' with your actual Pixel ID
+                if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+                if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+                n.queue=[];t=b.createElement(e);t.async=!0;
+                t.src=v;s=b.getElementsByTagName(e)[0];
+                s.parentNode.insertBefore(t,s)
+            }(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '921487979611725');
+            fbq('track', 'AddToCart');
+            // add to cart pixel event end
+            console.log('clicked add to cart');
+    });
+}
+</script>
+
+<script>
+	function func_TriggerInitiateCheckoutEvent(){
+    	return new Promise((resolve, reject) => {
+            // add to cart pixel event start
+            !function(f,b,e,v,n,t,s){
+                // Replace 'YOUR_PIXEL_ID' with your actual Pixel ID
+                if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+                if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+                n.queue=[];t=b.createElement(e);t.async=!0;
+                t.src=v;s=b.getElementsByTagName(e)[0];
+                s.parentNode.insertBefore(t,s)
+            }(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '921487979611725');
+            fbq('track', 'InitiateCheckout');
+            // add to cart pixel event end
+            console.log('clicked add to cart');
+    });
+}
+</script>
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-xxxxxx" crossorigin="anonymous" />
+
+
+<!--
+=============================================
+	Theme Inner Banner
+==============================================
+-->
+<!--			<div class="theme-inner-banner">-->
+<!--				<div class="container">-->
+<!--					<h2 class="intro-title text-center">{{ getdigital_product.Name }}</h2>-->
+<!--					<ul class="page-breadcrumb style-none d-flex justify-content-center">-->
+<!--						<li><a href="{% url 'index' %}">Home</a></li>-->
+<!--						<li class="current-page">{{ getdigital_product.Category.name }}</li>-->
+<!--					</ul>-->
+<!--				</div>-->
+<!--				<img src="{% static  'images/shape/shape_38.svg' %}" alt="" class="shapes shape-one">-->
+<!--				<img src="{% static  'images/shape/shape_39.svg' %}" alt="" class="shapes shape-two">-->
+<!--			</div> &lt;!&ndash; /.theme-inner-banner &ndash;&gt;-->
+			
+
+
+
+			<!--
+			=====================================================
+				Portfolio Details One
+			=====================================================
+			-->
+
+
+
+			<div class="pr-details-one mt-120 lg-mt-90 mb-170 lg-mb-100" style="">
+				<div class="container">
+					<div class="wrapper ps-xxl-4 pe-xxl-4 ms-xxl-5 me-xxl-5">
+						<div class="row gx-xxl-5">
+							<div class="col-lg-5" style="margin-top: 35px;">
+								<div class="card" style="width: 100%;">
+									{% if getdigital_product.course_view_select == 'video' %}
+									
+									<video width="640" height="360" controls>
+									<source src="{% if getdigital_product.Video %}{{ getdigital_product.Video.url }}{% endif %}" type="video/mp4">
+										Your browser does not support the video tag.
+									</video>
+									{% elif getdigital_product.course_view_select == 'image' %}
+								  <img src="{% if getdigital_product.image %}{{ getdigital_product.image.url }}{% else %}{% static 'Hrm-01.png' %}{% endif %}" class="card-img-top" alt="...">
+									{% endif %}
+								  <div class="card-body">
+									<h5 class="card-title">{{ getdigital_product.Name }}</h5>
+									<p class="card-text">
+										{% if getdigital_product.Class_Qty %}<b><i class="fas fa-chalkboard-teacher"></i> {{ getdigital_product.Class_Qty }}</b><br>{% endif %}
+										{% if getdigital_product.Duration %}<b><i class="far fa-clock"></i> &nbsp;{{ getdigital_product.Duration }}</b><br>{% endif %}
+										{% if getdigital_product.Task %}<b><i class="fas fa-file-alt"></i> &nbsp;&nbsp;{{ getdigital_product.Task }}</b><br>{% endif %}
+										{% if getdigital_product.Class_Start_Date %}<b><i class="fas fa-calendar-alt"></i> &nbsp;&nbsp;{{ getdigital_product.Class_Start_Date }}</b>{% endif %}
+									</p>
+									<div class="md:mb-3">
+										<span class="inline-block text-2xl font-semibold" style="color:rgb(0, 0, 0);"><b>৳{{ getdigital_product.offer_price }}</b></span>
+										&nbsp;<del class="ml-2 text-base font-normal md:text-xl" style="color:red;"><b>৳{{ getdigital_product.regular_price }}</b></del>
+									</div>
+									<a href="#checkout_form" class="btn btn-warning" style="width:100%;" onclick="func_TriggerAddToCartEvent()"><b>কোর্সটি কিনুন</b></a>
+								  </div>
+								</div>
+
+<!--								<div class="portfolio-block-two mt-40 mb-80 lg-mt-20 lg-mb-40">-->
+<!--									<div class="img-meta">-->
+<!--										<img src="{% if getdigital_product.image %}{{ getdigital_product.image.url }}{% else %}{% static 'Hrm-01.png' %}{% endif %}" alt="" class="w-100">-->
+<!--										<div class="hover-state tran3s"><a class="fancybox tran3s" data-fancybox="" title="Click for large view" href="{% if getdigital_product.image %}{{ getdigital_product.image.url }}{% else %}{% static 'Hrm-01.png' %}{% endif %}" tabindex="0"><i class="bi bi-plus"></i></a></div>-->
+<!--									</div>-->
+<!--								</div> &lt;!&ndash; /.portfolio-block-two &ndash;&gt;-->
+							</div>
+							<div class="col-lg-7" style="margin-top: 35px;">
+								{% for message in messages %}
+								<div class="alert alert-warning alert-dismissible fade show" role="alert">
+								  <strong>{{ message }}</strong>
+								</div>
+								{% endfor %}
+								<div class="title-style-five">
+<!--									<div class="upper-title">Redesign, Branding</div>-->
+									<h2 class="main-title">{{ getdigital_product.Name }}</h2>
+								</div>
+								<div class="text-wrapper pt-30 md-pt-20">
+									{{ getdigital_product.Short_Description | safe }}
+								</div>
+								<div class="text-wrapper pt-30 md-pt-20">
+									{{ getdigital_product.Description | safe }}
+								</div>
+								 <style>
+									/* Default style for both mobile and desktop */
+									#checkout_form {
+									}
+
+									/* Media query for screens with a maximum width of 767px (typical for mobile devices) */
+									@media (max-width: 767px) {
+										#checkout_form {
+											margin-bottom: 130px;
+										}
+									}
+
+									/* Media query for screens with a minimum width of 768px (typical for desktop devices) */
+									@media (min-width: 768px) {
+										#checkout_form {
+											margin-bottom: 170px;
+										}
+									}
+								</style>
+								<div id="checkout_form" style=""></div>
+								<div id="text_show" style="margin-bottom: 30px ">
+									এই কোর্সটি  পেতে নিচের ফরমটি পূরণ করুন।
+								</div>
+								<hr style="">
+								<div style="">
+									<h3>ফর্ম পূরণ করুন </h3>
+									<form action="{% url 'checkout_form_submit' %}" method="POST">{% csrf_token %}
+									  <input type="hidden" name="course_id" value="{{ getdigital_product.id }}">
+									  <div class="form-group">
+										<label for="exampleInputEmail1">নাম <span style="color:red;">*</span></label>
+										<input type="text" name="Customer_Name" class="form-control" id="" aria-describedby="emailHelp" required>
+									  </div>
+										<div class="form-group">
+											<label for="exampleInputEmail1">ইমেইল দিন <span style="color:red;">*</span></label>
+										<input type="email" name="Customer_Email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+<!--										<small id="emailHelp" class="form-text text-muted">(কোর্সটি ইমেইল ঠিকানাতে পাঠানো হবে)</small>-->
+									  </div>
+									  <div class="form-group">
+										<label for="">ফোন নম্বর <span style="color:red;">*</span></label>
+										<input name="Phone_Number" type="text" class="form-control" id="" required>
+									  </div>
+									  <button type="submit" class="btn btn-warning mt-2" style="width:30%;" onclick="func_TriggerInitiateCheckoutEvent()"><b>এগিয়ে যান</b></button>
+									</form>
+								</div>
+
+
+							</div>
+						</div>
+
+
+
+<!--						<div class="mt-80 pt-80 pb-40 mb-60 lg-mt-50 lg-pt-50 lg-pb-20 lg-mb-40 border-top border-bottom">-->
+<!--							<div class="row gx-xxl-5">-->
+<!--								<div class="col-lg-6">-->
+<!--									<h3 class="sub-title">System Features</h3>-->
+<!--									<ul class="style-none list-item">-->
+<!--										<li>Various analysis options with ai.</li>-->
+<!--										<li>Page Load (time, number of requests) lorem quis.</li>-->
+<!--										<li>Big data analysis with fast process.R</li>-->
+<!--										<li>Lorem analysis somthing quis dummy.</li>-->
+<!--									</ul>-->
+
+<!--								</div>-->
+<!--								<div class="col-xl-5 col-lg-6 ms-auto">-->
+<!--									<div class="form-style-one">-->
+<!--										<h3 style="font-size:30px!important;" class="form-title pb-40 lg-pb-20">Request For A Demo</h3>-->
+<!--										<form action="inc/contact.php" id="contact-form"  data-toggle="validator">-->
+<!--											<div class="messages"></div>-->
+<!--											<div class="row controls">-->
+<!--												<div class="col-12">-->
+<!--													<div class="input-group-meta form-group mb-30">-->
+<!--														<label>Name*</label>-->
+<!--														<input type="text" placeholder="Full Name" name="name" required="required" data-error="Name is required.">-->
+<!--														<div class="help-block with-errors"></div>-->
+<!--													</div>-->
+<!--												</div>-->
+
+<!--												<div class="col-12">-->
+<!--													<div class="input-group-meta form-group mb-30">-->
+<!--														<label>Email*</label>-->
+<!--														<input type="email" placeholder="example@example.com" name="email" required="required" data-error="Valid email is required.">-->
+<!--														<div class="help-block with-errors"></div>-->
+<!--													</div>-->
+<!--												</div>-->
+<!--												<div class="col-12">-->
+<!--													<div class="input-group-meta form-group mb-30">-->
+<!--														<label>Company Name*</label>-->
+<!--														<input type="text" placeholder="Company Name" name="name" required="required" data-error="Name is required.">-->
+<!--														<div class="help-block with-errors"></div>-->
+<!--													</div>-->
+<!--												</div>-->
+<!--												<div class="col-12">-->
+<!--													<div class="input-group-meta form-group mb-30">-->
+<!--														<label>Company Link*</label>-->
+<!--														<input type="text" placeholder="www.domain.com" name="name" required="required" data-error="Name is required.">-->
+<!--														<div class="help-block with-errors"></div>-->
+<!--													</div>-->
+<!--												</div>-->
+<!--												<div class="col-12">-->
+<!--													<div class="input-group-meta form-group mb-30">-->
+<!--														<textarea placeholder="Your message*" name="message" required="required" data-error="Please,leave us a message."></textarea>-->
+<!--														<div class="help-block with-errors"></div>-->
+<!--													</div>-->
+<!--												</div>-->
+<!--												<div class="col-12"><button class="btn-eight ripple-btn">Submit Request</button></div>-->
+<!--											</div>-->
+<!--										</form>-->
+<!--									</div> &lt;!&ndash; /.form-style-one &ndash;&gt;-->
+<!--								</div>-->
+<!--							</div>-->
+<!--						</div>-->
+						<hr style="margin-top:95px;">
+						<h3 class="sub-title">Working Process</h3>
+						<div class="row gx-xxl-5">
+							<div class="col-lg-3 col-sm-6">
+								<div class="block-style-sixteen d-flex mt-30 md-mt-20">
+									<div class="numb tran3s">1</div>
+									<div class="text">
+										<h6>Conducting Classes.</h6>
+									<p>Use interactive methods, practical examples, and coding exercises to enhance learning.</p>
+									</div>
+								</div> <!-- /.block-style-sixteen -->
+							</div>
+							<div class="col-lg-3 col-sm-6">
+								<div class="block-style-sixteen d-flex mt-30 md-mt-20">
+									<div class="numb tran3s">2</div>
+									<div class="text">
+										<h6>Practical Projects and Assignments.</h6>
+									<p>Assign coding projects and exercises to reinforce theoretical concepts.</p>
+									</div>
+								</div> <!-- /.block-style-sixteen -->
+							</div>
+							<div class="col-lg-3 col-sm-6">
+								<div class="block-style-sixteen d-flex mt-30 md-mt-20">
+									<div class="numb tran3s">3</div>
+									<div class="text">
+										<h6>Exam and Assessment.</h6>
+									<p>Consider a practical coding challenge as part of the assessment.</p>
+									</div>
+								</div> <!-- /.block-style-sixteen -->
+							</div>
+							<div class="col-lg-3 col-sm-6">
+								<div class="block-style-sixteen d-flex mt-30 md-mt-20">
+									<div class="numb tran3s">4</div>
+									<div class="text">
+										<h6>Refund Process.</h6>
+									<p>Announce the honor of 100% money back for the student who achieves the highest score in the exam.</p>
+									</div>
+								</div> <!-- /.block-style-sixteen -->
+							</div>
+						</div>
+						
+					</div> <!-- /.wrapper -->
+				</div>
+			</div> <!-- /.pr-details-one -->
+
+
+
+
+{% include 'footer.html' %}

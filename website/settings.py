@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'blogs',
     'products',
     'courses',
+    'digital_Products',
 
     #ckeditor
     'ckeditor',

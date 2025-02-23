@@ -1,0 +1,51 @@
+{% include 'header.html' %}
+{% load static %}
+			<!--
+			=============================================
+				Theme Inner Banner
+			============================================== 
+			-->
+
+<!--			<div class="theme-inner-banner">-->
+<!--				<div class="container">-->
+<!--					<h2 class="intro-title text-center">BrainSkyBD's Products</h2>-->
+<!--					<ul class="page-breadcrumb style-none d-flex justify-content-center">-->
+<!--						<li><a href="{% url 'index' %}">Home</a></li>-->
+<!--						<li class="current-page">Products</li>-->
+<!--					</ul>-->
+<!--				</div>-->
+<!--				<img src="{% static 'images/shape/shape_38.svg' %}" alt="" class="shapes shape-one">-->
+<!--				<img src="{% static 'images/shape/shape_39.svg' %}" alt="" class="shapes shape-two">-->
+<!--			</div> &lt;!&ndash; /.theme-inner-banner &ndash;&gt;-->
+			
+
+
+			<!--
+			=====================================================
+				Blog Section Three
+			=====================================================
+			-->
+			<div class="blog-section-three pt-90 mb-150 lg-pt-40 lg-mb-100">
+				<div class="container">
+					<div class="row gx-xxl-5">
+						{% for product in active_digital_product %}
+						<div class="col-lg-4 col-sm-6 d-flex" data-aos="fade-up">
+							<article class="blog-meta-one color-two tran3s mt-45">
+								<figure class="post-img m0"><a href="{% url 'digital_product_details' product.slug %}" class="w-100 d-block"><img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'Hrm-01.png' %}{% endif %}" alt="" class="w-100 tran4s"></a></figure>
+								<div class="post-data">
+									<div class="post-tag">{{ product.Category.name }}</div>
+									<a href="{% url 'digital_product_details' product.slug %}" class="blog-title"><h5>{{ coproducturse.Name }}</h5></a>
+								</div> <!-- /.post-data -->
+							</article>
+						</div>
+						{% endfor %}
+
+
+
+						
+					</div> <!-- /.row -->
+				
+				</div>
+			</div> <!-- /.blog-section-three -->
+
+            {% include 'footer.html' %}
