@@ -36,3 +36,8 @@ def digital_product_checkout_form_submit(request):
             return render(request, "digital_product/digital_product_buy_success_page.html")
     else:
         return redirect('digital_product_page')
+
+
+
+def proDentim_product(request):
+    return render(request, "digital_product/proDentim_product.html")
