@@ -30,7 +30,9 @@
 
             ttq.load('CV06LTJC77U0CTE65V60'); // Your TikTok Pixel ID
             ttq.page(); // Track Page View
-            ttq.track('ViewContent'); // Track ViewContent when the page loads
+            ttq.track('ViewContent', {
+				contents: [{ id: "product_123", quantity: 1, price: 1.00 }]
+			}); // Track ViewContent when the page loads
         }(window, document, 'ttq');
     </script>
 </head>
@@ -46,7 +48,8 @@
                 checkoutBtn.addEventListener("click", function () {
                     ttq.track('InitiateCheckout', {
                         value: 1.00,
-                        currency: "USD"
+                        currency: "USD",
+						contents: [{ id: "product_123", quantity: 1, price: 1.00 }]
                     });
                 });
             }
