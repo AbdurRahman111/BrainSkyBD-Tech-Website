@@ -3,6 +3,70 @@
 {% load static %}
 
 
+<head>
+    <!-- TikTok Pixel -->
+    <script>
+        !function (w, d, t) {
+            w.TiktokAnalyticsObject = t;
+            var ttq = w[t] = w[t] || [];
+            ttq.methods = ["page", "track", "identify", "instances", "debug", "on", "off", "once", "ready", "alias", "group", "enableCookie", "disableCookie", "holdConsent", "revokeConsent", "grantConsent"];
+            ttq.setAndDefer = function (t, e) {
+                t[e] = function () {
+                    t.push([e].concat(Array.prototype.slice.call(arguments, 0)))
+                }
+            };
+            for (var i = 0; i < ttq.methods.length; i++) ttq.setAndDefer(ttq, ttq.methods[i]);
+            ttq.instance = function (t) {
+                for (var e = ttq._i[t] || [], n = 0; n < ttq.methods.length; n++) ttq.setAndDefer(e, ttq.methods[n]);
+                return e
+            }, ttq.load = function (e, n) {
+                var r = "https://analytics.tiktok.com/i18n/pixel/events.js";
+                ttq._i = ttq._i || {}, ttq._i[e] = [], ttq._i[e]._u = r, ttq._t = ttq._t || {}, ttq._t[e] = +new Date, ttq._o = ttq._o || {}, ttq._o[e] = n || {};
+                n = document.createElement("script");
+                n.type = "text/javascript", n.async = !0, n.src = r + "?sdkid=" + e + "&lib=" + t;
+                e = document.getElementsByTagName("script")[0];
+                e.parentNode.insertBefore(n, e)
+            };
+
+            ttq.load('CV06LTJC77U0CTE65V60'); // Your TikTok Pixel ID
+            ttq.page(); // Track Page View
+            ttq.track('ViewContent'); // Track ViewContent when the page loads
+        }(window, document, 'ttq');
+    </script>
+</head>
+
+<body>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var checkoutBtn = document.getElementById("checkout-btn");
+            var purchaseBtn = document.getElementById("purchase-btn");
+
+            if (checkoutBtn) {
+                checkoutBtn.addEventListener("click", function () {
+                    ttq.track('InitiateCheckout', {
+                        value: 1.00,
+                        currency: "USD"
+                    });
+                });
+            }
+
+            if (purchaseBtn) {
+                purchaseBtn.addEventListener("click", function () {
+                    ttq.track('CompletePayment', {
+                        value: 1.00,
+                        currency: "USD",
+                        contents: [{ id: "product_123", quantity: 1, price: 1.00 }]
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+
+
+
+
 <!-- Facebook Pixel Base Code -->
 <script>
 	!function(f,b,e,v,n,t,s)
@@ -76,7 +140,7 @@
 										<span class="inline-block text-2xl font-semibold" style="color:rgb(0, 0, 0);"><b>৳{{ getdigital_product.offer_price }}</b></span>
 										&nbsp;<del class="ml-2 text-base font-normal md:text-xl" style="color:red;"><b>৳{{ getdigital_product.regular_price }}</b></del>
 									</div>
-									<a href="#checkout_form" class="btn btn-warning" style="width:100%;" onclick="triggerInitiateCheckout()"><b>কোর্সটি কিনুন</b></a>
+									<a href="#checkout_form" class="btn btn-warning " id="checkout-btn" style="width:100%;" onclick="triggerInitiateCheckout()"><b>কোর্সটি কিনুন</b></a>
 								  </div>
 								</div>
 
@@ -138,7 +202,7 @@
 										<label for="">ফোন নম্বর <span style="color:red;">*</span></label>
 										<input name="Phone_Number" type="text" class="form-control" id="" required>
 									  </div>
-									  <button type="submit" class="btn btn-warning mt-2" style="width:30%;" onclick="trackPurchase(0.99, 'USD')"><b>এগিয়ে যান</b></button>
+									  <button type="submit" class="btn btn-warning mt-2" id="purchase-btn" style="width:30%;" onclick="trackPurchase(0.99, 'USD')"><b>এগিয়ে যান</b></button>
 									 
 									</form>
 								</div>
