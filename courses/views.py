@@ -36,3 +36,9 @@ def checkout_form_submit(request):
             return render(request, "courses/couse_buy_success_page.html")
     else:
         return redirect('course_page')
+
+
+
+def redirect_to_url_func(request):
+    youtube_url = "https://www.youtube.com/watch?v=dc-Ac4_shV8&list=PLRmcuBYZxQUP_OcQKvBwdNCrzvebSy7GB"
+    return render(request, "courses/redirect_page.html", {"youtube_url": youtube_url})
